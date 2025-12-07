@@ -52,3 +52,9 @@ docker run --rm \
   sh -c "cd /volume_data && tar xzvf /backup/mssql_backup.tar.gz --strip 1"
 ```
 
+## Share Network
+In order for other containers to access the network.
+```
+docker network create my-net
+```
+In docker-compose.yml this network is setup as well as in the other docker container accordingly.
