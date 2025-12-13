@@ -16,6 +16,13 @@ services:
     volumes:
       - mssql_data:/var/opt/mssql
 
+    networks:
+      - my-net
+
 volumes:
   mssql_data:
+
+networks:
+  my-net:           # Define the custom network here
+    driver: bridge
 
