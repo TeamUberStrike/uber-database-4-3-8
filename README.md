@@ -58,3 +58,7 @@ In order for other containers to access the network.
 docker network create my-net
 ```
 In docker-compose.yml this network is setup as well as in the other docker container accordingly.
+
+## Browse Database
+adminer enables database browsing. Connect from port 8080(or configured port in docker compose file) in browser. Database name is the name of the database service.
+

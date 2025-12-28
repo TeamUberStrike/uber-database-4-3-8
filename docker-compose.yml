@@ -19,6 +19,14 @@ services:
     networks:
       - my-net
 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - my-net
+
 volumes:
   mssql_data:
 
