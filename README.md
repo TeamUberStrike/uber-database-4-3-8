@@ -46,10 +46,17 @@ docker run --rm \
 - Restore volume with database data
 ```
 docker run --rm \
-  -v uber-database_4_3_8_mssql_data:/volume_data \
+  -v uber_database_4_3_8_mssql_data:/volume_data \
   -v $(pwd):/backup \
   alpine \
   sh -c "cd /volume_data && tar xzvf /backup/mssql_backup.tar.gz --strip 1"
+```
+
+Restoring the database will overwrite user credentials as well.
+You may change it afterwards with
+```
+ALTER LOGIN sa WITH PASSWORD = 'YOUR_NEW_STRONG_PASSWORD';
+GO
 ```
 
 ## Share Network
